@@ -28,3 +28,27 @@ class Teste:
             print("Caso de teste 4 aprovado")
         else:
             print("Caso de teste 4 reprovado")
+
+    def multiplicacao1(self):
+        if self.calculadora.multiplicacao(10, 2) == 20:
+            print("Caso de teste 5 aprovado")
+        else:
+            print("Caso de teste 5 reprovado")
+
+    def multiplicacao2(self):
+        if self.calculadora.divisao(10, "<>") == "Erro: a calculadora só aceita números racionais":
+            print("Caso de teste 6 aprovado")
+        else:
+            print("Caso de teste 6 reprovado")
+
+    def divisao1(self):
+        if self.calculadora.multiplicacao(30, 5) == 6:
+            print("Caso de teste 7 aprovado")
+        else:
+            print("Caso de teste 7 reprovado")
+
+    def divisao2(self):
+        if self.calculadora.divisao(30, ":)") == "Erro: a calculadora só aceita números racionais":
+            print("Caso de teste 8 aprovado")
+        else:
+            print("Caso de teste 8 reprovado")
