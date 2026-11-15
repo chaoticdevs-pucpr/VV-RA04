@@ -1,0 +1,1 @@
+#chamamos as funcoes aq
