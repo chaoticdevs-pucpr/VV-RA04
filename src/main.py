@@ -9,7 +9,7 @@ class Main:
 
         while True:
             print("Escolha uma opção:")
-            print("1 - calculadora")
+            print("1 - Calculadora")
             print("2 - Testes")
             print("3 - Sair")
 
@@ -22,6 +22,8 @@ class Main:
                 print("2 - Subtração")
                 print("3 - Multiplicação")
                 print("4 - Divisão")
+                print("5 - Potência")
+                print("6 - Raiz")
                 opcao_operacao = input("Digite o número da operação desejada: ")
                 if opcao_operacao == "1":
                     num1 = float(input("Digite o primeiro número: "))
@@ -43,6 +45,16 @@ class Main:
                     num2 = float(input("Digite o segundo número: "))
                     resultado = self.calculadora.divisao(num1, num2)
                     print(f"O resultado da divisão é: {resultado}")
+                elif opcao_operacao == "5":
+                    num1 = float(input("Digite a base: "))
+                    num2 = float(input("Digite o expoente: "))
+                    resultado = self.calculadora.potencia(num1, num2)
+                    print(f"O resultado da potência é: {resultado}")
+                elif opcao_operacao == "6":
+                    num1 = float(input("Digite o radicando (número): "))
+                    num2 = float(input("Digite o índice da raiz (ex: 2 para quadrada): "))
+                    resultado = self.calculadora.raiz(num1, num2)
+                    print(f"O resultado da raiz é: {resultado}")
             elif opcao == "2":
                 self.testes.soma1()
                 self.testes.soma2()
@@ -52,6 +64,10 @@ class Main:
                 self.testes.multiplicacao2()
                 self.testes.divisao1()
                 self.testes.divisao2()
+                self.testes.potencia1()
+                self.testes.potencia2()
+                self.testes.raiz1()
+                self.testes.raiz2()
             elif opcao == "3":
                 print("Saindo do programa...")
                 break

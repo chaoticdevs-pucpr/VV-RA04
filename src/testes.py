@@ -52,3 +52,27 @@ class Teste:
             print("Caso de teste 8 aprovado")
         else:
             print("Caso de teste 8 reprovado")
+
+    def potencia1(self):
+        if self.calculadora.potencia(2, 3) == 8:
+            print("Caso de teste 9 aprovado")
+        else:
+            print("Caso de teste 9 reprovado")
+
+    def potencia2(self):
+        if self.calculadora.potencia(2, "a") == "Erro: a calculadora só aceita números racionais":
+            print("Caso de teste 10 aprovado")
+        else:
+            print("Caso de teste 10 reprovado")
+
+    def raiz1(self):
+        if self.calculadora.raiz(16, 2) == 4:
+            print("Caso de teste 11 aprovado")
+        else:
+            print("Caso de teste 11 reprovado")
+
+    def raiz2(self):
+        if self.calculadora.raiz(16, "x") == "Erro: a calculadora só aceita números racionais":
+            print("Caso de teste 12 aprovado")
+        else:
+            print("Caso de teste 12 reprovado")
