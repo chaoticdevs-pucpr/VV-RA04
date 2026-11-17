@@ -100,3 +100,27 @@ class Teste:
             print("Caso de teste 16 aprovado")
         else:
             print("Caso de teste 16 reprovado")
+
+    def porcentagem1(self):
+            if self.calculadora.porcentagem(20, 150) == 30.0:
+                print("Caso de teste 17 aprovado")
+            else:
+                print("Caso de teste 17 reprovado")
+
+    def porcentagem2(self):
+        if self.calculadora.porcentagem("a", 150) == "A calculadora só aceita números racionais":
+            print("Caso de teste 18 aprovado")
+        else:
+            print("Caso de teste 18 reprovado")
+
+    def historico1(self):
+        if "25 + 16 = 41" in self.calculadora.historico("25 + 16 = 41"):
+            print("Caso de teste 19 aprovado")
+        else:
+            print("Caso de teste 19 reprovado")
+
+    def historico2(self):
+        if self.calculadora.historico(123) == "Operação inválida para o histórico":
+            print("Caso de teste 20 aprovado")
+        else:
+            print("Caso de teste 20 reprovado")

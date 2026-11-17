@@ -1,4 +1,5 @@
 import math
+import os
 
 class Operacoes:
 
@@ -61,3 +62,21 @@ class Operacoes:
         if num1 < 0:
             return "Erro: não existe fatorial de número negativo"
         return math.factorial(int(num1))
+
+
+    def porcentagem(self, num1, num2):
+        if isinstance(num1, (int, float)) and isinstance(num2, (int, float)) and not isinstance(num1, bool) and not isinstance(num2, bool):
+            return (num1 * num2) / 100
+        else:
+            return "A calculadora só aceita números racionais"
+
+    def historico(self, operacao=None):
+        if operacao is not None:
+            if not isinstance(operacao, str) or "0" in operacao:
+                return "Operação inválida para o histórico"
+            with open("historico.txt", "a", encoding="utf-8") as f:
+                f.write(f"{operacao}\n")
+        if not os.path.exists("historico.txt"):
+            return []
+        with open("historico.txt", "r", encoding="utf-8") as f:
+            return f.read().splitlines()

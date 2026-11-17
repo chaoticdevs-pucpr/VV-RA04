@@ -26,46 +26,70 @@ class Main:
                 print("6 - Raiz")
                 print("7 - Logaritmo")
                 print("8 - Fatorial")
+                print("9 - Porcentagem")
+                print("10 - Histórico")
                 opcao_operacao = input("Digite o número da operação desejada: ")
                 if opcao_operacao == "1":
                     num1 = float(input("Digite o primeiro número: "))
                     num2 = float(input("Digite o segundo número: "))
                     resultado = self.calculadora.soma(num1, num2)
                     print(f"O resultado da soma é: {resultado}")
+                    self.calculadora.historico(f"{num1} + {num2} = {resultado}")
                 elif opcao_operacao == "2":
                     num1 = float(input("Digite o primeiro número: "))
                     num2 = float(input("Digite o segundo número: "))
                     resultado = self.calculadora.subtracao(num1, num2)
                     print(f"O resultado da subtração é: {resultado}")
+                    self.calculadora.historico(f"{num1} - {num2} = {resultado}")
                 elif opcao_operacao == "3":
                     num1 = float(input("Digite o primeiro número: "))
                     num2 = float(input("Digite o segundo número: "))
                     resultado = self.calculadora.multiplicacao(num1, num2)
                     print(f"O resultado da multiplicação é: {resultado}")
-                elif opcao_operacao == "3":
+                    self.calculadora.historico(f"{num1} * {num2} = {resultado}")
+                elif opcao_operacao == "4":
                     num1 = float(input("Digite o primeiro número: "))
                     num2 = float(input("Digite o segundo número: "))
                     resultado = self.calculadora.divisao(num1, num2)
                     print(f"O resultado da divisão é: {resultado}")
+                    self.calculadora.historico(f"{num1} / {num2} = {resultado}")
                 elif opcao_operacao == "5":
                     num1 = float(input("Digite a base: "))
                     num2 = float(input("Digite o expoente: "))
                     resultado = self.calculadora.potencia(num1, num2)
                     print(f"O resultado da potência é: {resultado}")
+                    self.calculadora.historico(f"{num1} ^ {num2} = {resultado}")
                 elif opcao_operacao == "6":
                     num1 = float(input("Digite o radicando (número): "))
                     num2 = float(input("Digite o índice da raiz (ex: 2 para quadrada): "))
                     resultado = self.calculadora.raiz(num1, num2)
                     print(f"O resultado da raiz é: {resultado}")
+                    self.calculadora.historico(f"raiz({num1}, {num2}) = {resultado}")
                 elif opcao_operacao == "7":
                     num1 = float(input("Digite o logaritmando (número): "))
                     num2 = float(input("Digite a base do logaritmo: "))
                     resultado = self.calculadora.logaritmo(num1, num2)
                     print(f"O resultado do logaritmo é: {resultado}")
+                    self.calculadora.historico(f"log({num1}, {num2}) = {resultado}")
                 elif opcao_operacao == "8":
                     num1 = float(input("Digite o número para calcular o fatorial: "))
                     resultado = self.calculadora.fatorial(num1)
                     print(f"O resultado do fatorial é: {resultado}")
+                    self.calculadora.historico(f"{num1}! = {resultado}")
+                elif opcao_operacao == "9":
+                    num1 = float(input("Digite a porcentagem: "))
+                    num2 = float(input("Digite o valor total: "))
+                    resultado = self.calculadora.porcentagem(num1, num2)
+                    print(f"O resultado da porcentagem é: {resultado}")
+                    self.calculadora.historico(f"{num1}% de {num2} = {resultado}")
+                elif opcao_operacao == "10":
+                    registros = self.calculadora.historico()
+                    if registros:
+                        print("--- Histórico de Operações ---")
+                        for item in registros:
+                            print(item)
+                    else:
+                        print("O histórico está vazio.")
 
             elif opcao == "2":
                 self.testes.soma1()
@@ -84,6 +108,10 @@ class Main:
                 self.testes.logaritmo2()
                 self.testes.fatorial1()
                 self.testes.fatorial2()
+                self.testes.porcentagem1()
+                self.testes.porcentagem2()
+                self.testes.historico1()
+                self.testes.historico2()
             elif opcao == "3":
                 print("Saindo do programa...")
                 break
