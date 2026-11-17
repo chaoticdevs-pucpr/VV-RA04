@@ -36,13 +36,13 @@ class Teste:
             print("Caso de teste 5 reprovado")
 
     def multiplicacao2(self):
-        if self.calculadora.divisao(10, "<>") == "Erro: a calculadora só aceita números racionais":
+        if self.calculadora.multiplicacao(10, "<>") == "Erro: a calculadora só aceita números racionais":
             print("Caso de teste 6 aprovado")
         else:
             print("Caso de teste 6 reprovado")
 
     def divisao1(self):
-        if self.calculadora.multiplicacao(30, 5) == 6:
+        if self.calculadora.divisao(30, 5) == 6:
             print("Caso de teste 7 aprovado")
         else:
             print("Caso de teste 7 reprovado")
@@ -76,3 +76,27 @@ class Teste:
             print("Caso de teste 12 aprovado")
         else:
             print("Caso de teste 12 reprovado")
+
+    def logaritmo1(self):
+        if self.calculadora.logaritmo(8, 2) == 3.0:
+            print("Caso de teste 13 aprovado")
+        else:
+            print("Caso de teste 13 reprovado")
+
+    def logaritmo2(self):
+        if self.calculadora.logaritmo(8, "x") == "Erro: a calculadora só aceita números racionais":
+            print("Caso de teste 14 aprovado")
+        else:
+            print("Caso de teste 14 reprovado")
+
+    def fatorial1(self):
+        if self.calculadora.fatorial(5) == 120:
+            print("Caso de teste 15 aprovado")
+        else:
+            print("Caso de teste 15 reprovado")
+
+    def fatorial2(self):
+        if self.calculadora.fatorial("a") == "Erro: a calculadora só aceita números racionais":
+            print("Caso de teste 16 aprovado")
+        else:
+            print("Caso de teste 16 reprovado")

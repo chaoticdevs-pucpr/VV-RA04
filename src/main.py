@@ -24,6 +24,8 @@ class Main:
                 print("4 - Divisão")
                 print("5 - Potência")
                 print("6 - Raiz")
+                print("7 - Logaritmo")
+                print("8 - Fatorial")
                 opcao_operacao = input("Digite o número da operação desejada: ")
                 if opcao_operacao == "1":
                     num1 = float(input("Digite o primeiro número: "))
@@ -55,6 +57,16 @@ class Main:
                     num2 = float(input("Digite o índice da raiz (ex: 2 para quadrada): "))
                     resultado = self.calculadora.raiz(num1, num2)
                     print(f"O resultado da raiz é: {resultado}")
+                elif opcao_operacao == "7":
+                    num1 = float(input("Digite o logaritmando (número): "))
+                    num2 = float(input("Digite a base do logaritmo: "))
+                    resultado = self.calculadora.logaritmo(num1, num2)
+                    print(f"O resultado do logaritmo é: {resultado}")
+                elif opcao_operacao == "8":
+                    num1 = float(input("Digite o número para calcular o fatorial: "))
+                    resultado = self.calculadora.fatorial(num1)
+                    print(f"O resultado do fatorial é: {resultado}")
+
             elif opcao == "2":
                 self.testes.soma1()
                 self.testes.soma2()
@@ -68,6 +80,10 @@ class Main:
                 self.testes.potencia2()
                 self.testes.raiz1()
                 self.testes.raiz2()
+                self.testes.logaritmo1()
+                self.testes.logaritmo2()
+                self.testes.fatorial1()
+                self.testes.fatorial2()
             elif opcao == "3":
                 print("Saindo do programa...")
                 break
